@@ -108,7 +108,7 @@ export default function Login() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="warning"
             className={classes.submit}
           >
             Log In
