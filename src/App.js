@@ -5,9 +5,11 @@ import User from "./routes/User";
 
 function App() {
  return (
-   
+    <SnackbarProvider>
       <Admin />
       <User />
+    </SnackbarProvider>
+      
   );
 }
 
