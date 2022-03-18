@@ -94,26 +94,9 @@ function Sidebar(props) {
       {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
         <>
           <Divider />
-          <List>
-            <ListItem button component={Link} href="/addjob">
-              <ListItemIcon>
-                <Add />
-              </ListItemIcon>
-              <ListItemText primary={"Add Job"} style={{ color: "black" }} />
-            </ListItem>
-          </List>
-          <Divider />
-          <List>
-            <ListItem button component={Link} href="/users">
-              <ListItemIcon>
-                <Person />
-              </ListItemIcon>
-              <ListItemText
-                primary={"Users"}
-                style={{ color: "black" }}
-              />
-            </ListItem>
-          </List>
+         
+          
+        
         </>
       ) : (
         <></>
@@ -141,6 +124,16 @@ function Sidebar(props) {
           <Typography variant="h3" className={classes.title}>
             Welcome, {NAME}
           </Typography>
+
+            <List>
+            <ListItem button component={Link} href="/addjob">
+              <ListItemIcon>
+                <Add />
+              </ListItemIcon>
+              <ListItemText primary={"Add Job"} style={{ color: "inherit" }} />
+            </ListItem>
+          </List>
+
           
             <List>
             <ListItem button component={Link} href="/users">
@@ -149,7 +142,7 @@ function Sidebar(props) {
               </ListItemIcon>
               <ListItemText
                 primary={"Users"}
-                style={{ color: "black" }}
+                style={{ color: "inherit" }}
               />
             </ListItem>
           </List>
