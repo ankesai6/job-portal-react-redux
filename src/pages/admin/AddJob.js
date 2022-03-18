@@ -58,8 +58,8 @@ export default function AddJob() {
   const [jobName, setJobName] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
-  const [experience,setExperience] = useState("");
-  const [salary setSalary] = useState("");
+  const [experience, setExperience] = useState("");
+  const [salary, setSalary] = useState("");
   const dispatch = useDispatch();
   const location = useLocation();
 
