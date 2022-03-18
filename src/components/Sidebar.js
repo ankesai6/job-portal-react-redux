@@ -84,14 +84,10 @@ function Sidebar(props) {
       <h1 style={{ textAlign: "center" }}>Hi {NAME}</h1>
       </div>
       <div />
-      <Divider />
+      
       
       {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
-        <>
-          <Divider />
-         
-         
-        </>
+       
       ) : (
         <></>
       )}
@@ -115,12 +111,9 @@ function Sidebar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h3" className={classes.title}>
-            Welcome to Job Portal, {NAME}
+          <Typography variant="h5" className={classes.title}>
+            Welcome to Portal, {NAME}
           </Typography>
-
-         
-           
          <List>
         <ListItem button component={Link} href="/jobs">
           <ListItemIcon><Work /></ListItemIcon>
