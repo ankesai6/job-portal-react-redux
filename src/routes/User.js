@@ -25,7 +25,7 @@ export default function User() {
               );
             }}
           />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/resgister" element={<SignUp />} />
           <Route path="/home" element={<Home />} />
           <Route path="/addjob" element={<AddJob />} />
           <Route path="/jobs" element={<Jobs />} />
