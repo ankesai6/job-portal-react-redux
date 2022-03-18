@@ -1,4 +1,7 @@
-import Avatar from "@material-ui/core/Avatar";
+import React from "react";
+import { useSelector } from "react-redux";
+import { useSnackbar } from "react-simple-snackbar";
+
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -8,9 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import React from "react";
-import { useSelector } from "react-redux";
-import { useSnackbar } from "react-simple-snackbar";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -19,12 +20,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -34,22 +31,20 @@ const useStyles = makeStyles((theme) => ({
 
 const options = {
   style: {
-    backgroundColor: "#f76565",
-    color: "black",
+    backgroundColor: "black",
+    color: "f76565",
     textAlign: "center",
   },
   closeStyle: {
-    color: "lightcoral",
+    color: "blue",
     fontSize: "16px",
   },
 };
 
 export default function Login() {
-  // const navigate = useNavigate();
+
   const [openSnackbar] = useSnackbar(options);
   const users = useSelector((state) => state.userReducer);
-  // console.log(users);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -67,20 +62,13 @@ export default function Login() {
         localStorage.setItem("userData",JSON.stringify(users[index]))
         window.location.replace("/jobs")
       } else {
-        openSnackbar(" Please enter a correct password");
+        openSnackbar("Enter correct password");
       }
     }
     console.log(index);
 
     console.log(userData);
 
-    // if (loginData.data.success) {
-    //   localStorage.setItem("isLoggedIn", true);
-    //   window.location.replace("/home");
-    //   localStorage.setItem("userId", loginData.data.user._id);
-    // } else {
-    //   console.log(loginData.data.msg);
-    // }
   };
 
   const classes = useStyles();
@@ -89,48 +77,14 @@ export default function Login() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+      
         <Typography component="h1" variant="h5">
-          Sign in
+          Log in
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          {/* <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          /> */}
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
+          <TextField variant="outlined" margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
+          <TextFieldvariant="outlined"margin="normal"requiredfullWidthname="password"label="Password"type="password"id="password"autoComplete="current-password"/>
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} > Log In </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
@@ -139,7 +93,7 @@ export default function Login() {
             </Grid>
             <Grid item>
               <Link href="/signup" variant="body2">
-                {"Don't have an account? Sign Up"}
+                {"Don't have an account? Register"}
               </Link>
             </Grid>
           </Grid>
