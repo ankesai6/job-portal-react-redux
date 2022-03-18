@@ -65,7 +65,9 @@ const useStyles = makeStyles((theme) => ({
 const LOCAL_STORAGE = JSON.parse(localStorage.getItem("userData"));
 function Sidebar(props) {
   const NAME = LOCAL_STORAGE.firstName;
- 
+  // if (JSON.parse(localStorage.getItem("userData")) !== null) {
+  //   navigate("/jobs");
+  // }
   const { window } = props;
   const classes = useStyles();
   const navigate = useNavigate();
@@ -76,9 +78,19 @@ function Sidebar(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const drawer = (
-   {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
+   const drawer = (
+    <div>
+      <div>
+      <h1 style={{ textAlign: "center" }}>Hi {NAME}</h1>
+      </div>
+      <div />
+      <Divider />
+      
+      {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
         <>
+          <Divider />
+         
+         
         </>
       ) : (
         <></>
