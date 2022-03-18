@@ -92,7 +92,7 @@ export default function AddJob() {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           <h1> You don't have access!</h1>
-         <h2> You are User!</h>
+         <h2> You are User!</h2>
          <h1>Try to contact admin </h1>
         </main>
       </>
