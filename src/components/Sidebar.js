@@ -81,7 +81,34 @@ function Sidebar(props) {
 
   const drawer = (
     <div>
-      <div>
+     
+    </div>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            Welcome, {NAME}
+          </Typography>
+ 
+
+
+<div>
         <Avatar alt="Remy Sharp" className={classes.large} />
         <h1 style={{ textAlign: "center" }}>{NAME}</h1>
       </div>
@@ -122,29 +149,8 @@ function Sidebar(props) {
       ) : (
         <></>
       )}
-    </div>
-  );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
-  return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Welcome, {NAME}
-          </Typography>
+      
+      
           <Button
             color="inherit"
             onClick={() => {
