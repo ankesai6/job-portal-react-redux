@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
     marginLeft: "4.7rem",
-    // alignContent: "center",
     marginTop: "1rem",
     marginBottom: "1rem",
   },
@@ -66,9 +65,7 @@ const useStyles = makeStyles((theme) => ({
 const LOCAL_STORAGE = JSON.parse(localStorage.getItem("userData"));
 function Sidebar(props) {
   const NAME = LOCAL_STORAGE.firstName;
-  // if (JSON.parse(localStorage.getItem("userData")) !== null) {
-  //   navigate("/jobs");
-  // }
+ 
   const { window } = props;
   const classes = useStyles();
   const navigate = useNavigate();
@@ -80,23 +77,8 @@ function Sidebar(props) {
   };
 
   const drawer = (
-    <div>
-      <div>
-        <h1 style={{ textAlign: "center" }}>{NAME}</h1>
-      </div>
-      <div />
-      <Divider />
-      <List>
-        <ListItem button component={Link} href="/jobs">
-          <ListItemIcon><Work /></ListItemIcon>
-          <ListItemText primary={"Jobs"} style={{ color: "black" }} /></ListItem>
-      </List>
-      {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
+   {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
         <>
-          <Divider />
-         
-          
-        
         </>
       ) : (
         <></>
@@ -122,8 +104,17 @@ function Sidebar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h3" className={classes.title}>
-            Welcome, {NAME}
+            Welcome to Job Portal, {NAME}
           </Typography>
+
+         
+           
+         <List>
+        <ListItem button component={Link} href="/jobs">
+          <ListItemIcon><Work /></ListItemIcon>
+          <ListItemText primary={"Jobs"} style={{ color: "inherit" }} /></ListItem>
+      </List>
+
 
             <List>
             <ListItem button component={Link} href="/addjob">
@@ -171,7 +162,7 @@ function Sidebar(props) {
               paper: classes.drawerPaper,
             }}
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true, 
             }}
           >
             {drawer}
