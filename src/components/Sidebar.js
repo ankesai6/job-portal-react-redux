@@ -139,7 +139,7 @@ function Sidebar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h4" className={classes.title}>
             Welcome, {NAME}
           </Typography>
           <Button
