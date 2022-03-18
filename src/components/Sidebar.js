@@ -84,10 +84,14 @@ function Sidebar(props) {
       <h1 style={{ textAlign: "center" }}>Hi {NAME}</h1>
       </div>
       <div />
-      
+      <Divider />
       
       {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
-       
+        <>
+          <Divider />
+         
+         
+        </>
       ) : (
         <></>
       )}
