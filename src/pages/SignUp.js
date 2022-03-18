@@ -1,135 +1,83 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { addUser } from "../redux/actions";
-import { v4 as uuid } from "uuid";
-import Button from "@material-ui/core/Button";
-import Checkbox from "@material-ui/core/Checkbox";
-import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import axios from "../../Axios";
+import React, { useState, useContext } from "react";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { MYContext } from "../../context";
+import { useHistory } from "react-router-dom";
+import "./signup.css";
 
+function Signup() {
+   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setUser } = useContext(MYContext);
+  const history = useHistory();
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  form: {
-    width: "100%", 
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
-
-export default function SignUp() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-
-    dispatch(
-      addUser(
-        uuid(),
-        data.get("firstName"),
-        data.get("lastName"),
-        data.get("email"),
-        data.get("password")
-      )
-    ).then(navigate("/"));
-   
-  };
-  const classes = useStyles();
-
+  function handleSignup(e) {
+    e.preventDefault();
+    if (!name ||!email || !password) {
+      return alert("please fill the missing field");
+    }
+    axios
+      .post("/users", { name,email, password })
+      .then(({ data }) => {
+        setUser(data);
+        localStorage.setItem("token", data.token);
+        history.replace("/");
+      })
+      .catch((err) => console.log(err));
+  }
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up
-        </Typography>
-        <form className={classes.form} noValidate onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label="First Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={classes.submit}
-          >
-            Register
-          </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="/" variant="body2">
-                If You have an account? Log in
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
+    <>
+      <div className="login-container">
+        <h1>theMealDb</h1>
+        <h3>Register</h3>
+        <div className="login-inner-container">
+          <Container>
+            <Row>
+              <Col sm={12} md={12}>
+        <Form onSubmit={handleSignup} autocomplete="off">
+          
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="name"
+              placeholder="Enter Your UserNmae"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              required
+            />
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter Your Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter your Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              required
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">Register</Button>
+        </Form>
+        </Col>
+             </Row>
+          </Container>
+        </div>
       </div>
-    </Container>
+    </>
   );
 }
+
+export default Signup;
