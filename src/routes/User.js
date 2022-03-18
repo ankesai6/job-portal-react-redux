@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
 import AddJob from "../pages/admin/AddJob";
 import Home from "../pages/admin/Home";
 import ViewApplicants from "../pages/admin/ViewApplicants";
@@ -13,16 +8,7 @@ import SignUp from "../pages/SignUp";
 import JobDetails from "../pages/user/JobDetails";
 import Jobs from "../pages/user/Jobs";
 
-// function ProtectedRoute({ component: Component, logic, ...rest }) {
-//   return (
-//     <Route
-//       {...rest}
-//       render={(props) =>
-//         logic ? <Component {...props} /> : <Navigate to="/" />
-//       }
-//     />
-//   );
-// }
+
 export default function User() {
   return (
     <>
