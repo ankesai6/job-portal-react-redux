@@ -1,4 +1,4 @@
-import { Button, Link } from "@material-ui/core";
+import { Avatar, Button, Link } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
@@ -82,7 +82,8 @@ function Sidebar(props) {
   const drawer = (
     <div>
       <div>
-     <h1 style={{ textAlign: "center" }}>{NAME}</h1>
+        <Avatar alt="Remy Sharp" className={classes.large} />
+        <h1 style={{ textAlign: "center" }}>{NAME}</h1>
       </div>
       <div />
       <Divider />
