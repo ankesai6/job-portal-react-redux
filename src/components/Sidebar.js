@@ -151,7 +151,7 @@ function Sidebar(props) {
       </List>
       {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
         <>
-        
+          <Divider />
           <Button
             color="inherit"
             onClick={() => {
