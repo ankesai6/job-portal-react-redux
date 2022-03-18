@@ -11,6 +11,6 @@ function App() {
     </SnackbarProvider>
       
   );
-}
+} 
 
 export default App;
