@@ -1,4 +1,4 @@
-import { Avatar, Button, Link } from "@material-ui/core";
+import {Button, Link } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
@@ -82,7 +82,6 @@ function Sidebar(props) {
   const drawer = (
     <div>
       <div>
-        <Avatar alt="Remy Sharp" className={classes.large} />
         <h1 style={{ textAlign: "center" }}>{NAME}</h1>
       </div>
       <div />
@@ -90,7 +89,7 @@ function Sidebar(props) {
       <List>
         <ListItem button component={Link} href="/jobs">
           <ListItemIcon><Work /></ListItemIcon>
-          <ListItemText primary={"Jobs"} style={{ color: "#262626" }} /></ListItem>
+          <ListItemText primary={"Jobs"} style={{ color: "black" }} /></ListItem>
       </List>
       {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
         <>
@@ -100,7 +99,7 @@ function Sidebar(props) {
               <ListItemIcon>
                 <Add />
               </ListItemIcon>
-              <ListItemText primary={"Add Job"} style={{ color: "#262626" }} />
+              <ListItemText primary={"Add Job"} style={{ color: "black" }} />
             </ListItem>
           </List>
           <Divider />
@@ -110,8 +109,8 @@ function Sidebar(props) {
                 <Person />
               </ListItemIcon>
               <ListItemText
-                primary={"Manage Users"}
-                style={{ color: "#262626" }}
+                primary={"Users"}
+                style={{ color: "black" }}
               />
             </ListItem>
           </List>
@@ -139,9 +138,23 @@ function Sidebar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h4" className={classes.title}>
+          <Typography variant="h3" className={classes.title}>
             Welcome, {NAME}
           </Typography>
+          
+            <List>
+            <ListItem button component={Link} href="/users">
+              <ListItemIcon>
+                <Person />
+              </ListItemIcon>
+              <ListItemText
+                primary={"Users"}
+                style={{ color: "black" }}
+              />
+            </ListItem>
+          </List>
+
+
           <Button
             color="inherit"
             onClick={() => {
