@@ -142,16 +142,6 @@ function Sidebar(props) {
           <Typography variant="h6" className={classes.title}>
             Welcome, {NAME}
           </Typography>
-
-
-        <List>
-        <ListItem button component={Link} href="/jobs">
-          <ListItemIcon><Work /></ListItemIcon>
-          <ListItemText primary={"Jobs"} style={{ color: "#262626" }} /></ListItem>
-      </List>
-      {LOCAL_STORAGE !== null && LOCAL_STORAGE.role === 0 ? (
-        <>
-          <Divider />
           <Button
             color="inherit"
             onClick={() => {
