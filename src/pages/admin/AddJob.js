@@ -58,6 +58,8 @@ export default function AddJob() {
   const [jobName, setJobName] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
+  const [experience,setExperience] = useState("");
+  const [salary setSalary] = useState("");
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -68,6 +70,8 @@ export default function AddJob() {
       setId(location.state.jobData.id);
       setJobName(location.state.jobData.jobName);
       setType(location.state.jobData.type);
+      setId(location.state.jobData.salary);
+      setId(location.state.jobData.experience);
       setDescription(location.state.jobData.description);
     }
   }, []);
@@ -75,8 +79,8 @@ export default function AddJob() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (location.state !== null)
-      dispatch(modifyJob(id, jobName, type, description));
-    else dispatch(addJob(uuid(), jobName, type, description));
+      dispatch(modifyJob(id, jobName, type, description, salary, experience));
+    else dispatch(addJob(uuid(), jobName, type, description, salary, experience));
     openSnackbar("Submitted");
   };
   const classes = useStyles();
@@ -87,10 +91,9 @@ export default function AddJob() {
         <Sidebar />
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <h1>
-            You don't have access! If you think this a mistake try contacting
-            admin
-          </h1>
+          <h1> You don't have access!</h1>
+         <h2> You are User!</h>
+         <h1>Try to contact admin </h1>
         </main>
       </>
     );
@@ -105,7 +108,7 @@ export default function AddJob() {
           <CssBaseline />
           <div className={classes.paper}>
             <Typography component="h1" variant="h5">
-              Add a new job
+              Add new job
             </Typography>
             <form className={classes.form} noValidate onSubmit={handleSubmit}>
               <Grid container spacing={2}>
@@ -130,6 +133,28 @@ export default function AddJob() {
                     fullWidth
                     label="Job Type"
                     name="type"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    fullWidth
+                    label="Salary"
+                    name="salary"
+                  />
+                </Grid>
+               <Grid item xs={12} sm={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    fullWidth
+                    label="Experience"
+                    name="experience"
                   />
                 </Grid>
                 <Grid item xs={12}>
