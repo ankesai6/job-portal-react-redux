@@ -66,23 +66,9 @@ export default function ViewApplicants() {
     if (window.confirm("Do yo want to " + action + " the applicant?")) {
       dispatch(handleApplicantStatus(jobId, applicantId, status));
       console.log(jobId, applicantId, status);
-      //   const newState = [...jobs];
-      //   const index = newState.findIndex((job) => job.id === jobId);
-      //   console.log(index);
-      //   const applicants = [...newState[index].applicants];
-      //   console.log(applicants);
-      //   const applicantIndex = applicants.findIndex(
-      //     (application) => application.id === applicantId
-      //   );
-      //   console.log(applicantIndex);
-      //   if (applicantIndex !== -1)
-      //     newState[index].applicants[applicantIndex].status = status;
-      //   console.log(newState);
-      // }
+     
     }
   }
-
-  // const userData = [JSON.parse(localStorage.getItem("userData"))];
 
   if (JSON.parse(localStorage.getItem("userData")).role === 1) {
     return (
@@ -115,7 +101,7 @@ export default function ViewApplicants() {
               color="textSecondary"
               gutterBottom
             ></Typography>
-            <Typography variant="h6" component="h2">
+            <Typography variant="h4" component="h2">
               Job Name: {location.state.jobData.jobName}
             </Typography>
             <br />
@@ -123,11 +109,15 @@ export default function ViewApplicants() {
               Job Type/Role: {location.state.jobData.type}
             </Typography>
             <br />
-            <Typography variant="h6">
-              Description: {location.state.jobData.description}
+             <Typography variant="h6" component="h2">
+              Job Type/Role: {location.state.jobData.salary}
             </Typography>
             <br />
-            <Typography variant="h6">
+            <Typography variant="h6" component="h2">
+              Job Type/Role: {location.state.jobData.experience}
+            </Typography>
+           <br />
+           <Typography variant="h6">
               Updated on: {location.state.jobData.date}
             </Typography>
           </CardContent>
@@ -138,7 +128,7 @@ export default function ViewApplicants() {
               <Card variant="outlined">
                 <CardContent>
                   <Typography variant="h6" component="h2">
-                    {/* {job.id && job.id} */}
+                
                   </Typography>
                   <Typography variant="h6" component="h2">
                     Applicant Name:
@@ -160,7 +150,7 @@ export default function ViewApplicants() {
                           Accepted
                         </h3>
                       ) : (
-                        <h3 style={{ color: "orange", textAlign: "center" }}>
+                        <h3 style={{ color: "red", textAlign: "center" }}>
                           Rejected
                         </h3>
                       )}
@@ -182,7 +172,7 @@ export default function ViewApplicants() {
                         )
                       }
                     >
-                      Approve
+                      Accept
                     </Button>
                     <Button
                       color="primary"
