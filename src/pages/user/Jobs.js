@@ -115,10 +115,10 @@ export default function Jobs() {
                     {job.type}
                   </Typography>
                <Typography variant="body2" component="p">
-                    {job.salary}
+                   Salary: {job.salary}
                   </Typography>
                <Typography variant="body2" component="p">
-                    {job.experience}
+                   Experience {job.experience}
                   </Typography>
                   <Typography variant="body2" component="p">
                     {job.description}
