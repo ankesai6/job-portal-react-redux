@@ -10,6 +10,8 @@ export default function jobReducer(state = [], action) {
         type: action.payload.type,
         description: action.payload.description,
         date: action.payload.date,
+        salary: action.payload.salary,
+        experience:action.payload.experience,
         applicants: [],
       },
     ];
@@ -44,6 +46,8 @@ export default function jobReducer(state = [], action) {
       newState[index].jobName = action.payload.jobName;
       newState[index].type = action.payload.type;
       newState[index].description = action.payload.description;
+      newState[index].salary = action.payload.salary;
+      newState[index].experience = action.payload.description;
     }
     return newState;
   } else {
