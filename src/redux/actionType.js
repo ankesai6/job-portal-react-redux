@@ -6,5 +6,5 @@ export const JOB_LIST = "JOB_LIST"
 export const ADD_APPLICANT = "ADD_APPLICANT"
 export const APP_STATUS="APP_STATUS"
 export const MODIFY_JOB="MODIFY_JOB"
-
+ 
 
