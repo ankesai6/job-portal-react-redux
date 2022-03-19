@@ -122,7 +122,9 @@ export default function SignUp() {
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="/" variant="body2">
-                Already have an account? Log in
+                Already have an account? Log in<br>
+                  <h3>Demo Crediantials</h3>
+               <p> Email & PassWord :admin123@gmail.com</p>
               </Link>
             </Grid>
           </Grid>
