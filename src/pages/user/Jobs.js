@@ -114,6 +114,12 @@ export default function Jobs() {
                   <Typography className={classes.pos} color="textSecondary">
                     {job.type}
                   </Typography>
+               <Typography variant="body2" component="p">
+                    {job.salary}
+                  </Typography>
+               <Typography variant="body2" component="p">
+                    {job.experience}
+                  </Typography>
                   <Typography variant="body2" component="p">
                     {job.description}
                   </Typography>
@@ -121,9 +127,10 @@ export default function Jobs() {
                 {JSON.parse(localStorage.getItem("userData")).role === 0 ? (
                   <>
                     <CardActions>
-                      <Button
-                        color="primary"
-                        size="small"
+                      <Button  
+                      type="button" 
+                      class="btn btn-primary"
+                       size="small"
                         variant="contained"
                         onClick={() =>
                           navigate("/viewapplicants", {
@@ -134,6 +141,8 @@ export default function Jobs() {
                         View Applicants
                       </Button>
                       <Button
+                     type="button" 
+                      class="btn btn-primary"
                         color="primary"
                         size="small"
                         variant="contained"
@@ -143,7 +152,7 @@ export default function Jobs() {
                           })
                         }
                       >
-                        Modify Job
+                        Update Job
                       </Button>
                       <Button
                         color="primary"
