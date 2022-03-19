@@ -13,13 +13,15 @@ export const addUser = (id, firstName, lastName, email, password) => ({
   },
 });
 
-export const addJob = (id, jobName, type, description) => ({
+export const addJob = (id, jobName, type, description,salary, experience,) => ({
   type: actions.ADD_JOB,
   payload: {
     id,
     jobName,
     type,
     description,
+    salary,
+    experience,
     date:
       today.getDate() +
       "/" +
@@ -63,13 +65,15 @@ export const handleApplicantStatus = (jobId, applicantId, status) => ({
   },
 });
 
-export const modifyJob = (jobId, jobName, type, description) => ({
+export const modifyJob = (jobId, jobName, type, description, salary, experience) => ({
   type: actions.MODIFY_JOB,
   payload: {
     jobId,
     jobName,
     type,
     description,
+    salary,
+    experience,
   },
 });
 
