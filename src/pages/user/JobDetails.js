@@ -105,8 +105,12 @@ export default function JobDetails() {
               Job Type/Role: {location.state.jobData.type}
             </Typography>
             <br />
-            <Typography variant="h6">
-              Description: {location.state.jobData.description}
+            <Typography variant="h6" component="h2">
+             Salary : {location.state.jobData.salary}
+            </Typography>
+            <br />
+            <Typography variant="h6" component="h2">
+              Job Experince: {location.state.jobData.experince}
             </Typography>
             <br />
             <Typography variant="h6">
@@ -156,7 +160,7 @@ export default function JobDetails() {
                 ) : location.state.jobData.applicants[applicantIndex].status ===
                   "Approved" ? (
                   <h3 style={{ color: "green", textAlign: "center" }}>
-                    Approved
+                    Accepted
                   </h3>
                 ) : (
                   <h3 style={{ color: "orange", textAlign: "center" }}>
@@ -165,7 +169,8 @@ export default function JobDetails() {
                 )}
               </Typography>
             ) : (
-              <h3>You did not applied for this job yet</h3>
+              <h3>You did not applied for this job yet </h3>
+              <p>If You Are Intersted Please Apply </p>
             )}
           </CardContent>
         </Card>
