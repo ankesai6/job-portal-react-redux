@@ -57,7 +57,7 @@ export default function Users() {
 
   function handleRole(id, role) {
     if (LOCAL_STORAGE.id === id) {
-      openSnackbar("You can't change your own Role!");
+      openSnackbar("Sorry! You can't change your own Role!");
     } else {
       dispatch(changeRole(id, role));
     }
@@ -69,10 +69,10 @@ export default function Users() {
         <Sidebar />
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <h1>
-            You don't have access! If you think this a mistake try contacting
+          <h2>
+            You don't have access! Please Contact
             admin
-          </h1>
+          </h2>
         </main>
       </>
     );
@@ -99,6 +99,9 @@ export default function Users() {
               </Typography>
               <Typography variant="body2" component="p">
                 User Type: {user.role === 0 ? "Admin" : "User"}
+              </Typography>
+             <Typography className={classes.pos} color="textSecondary">
+                {user.email}
               </Typography>
             </CardContent>
             {user.role === 0 ? (
