@@ -92,7 +92,8 @@ export default function Users() {
                 gutterBottom
               ></Typography>
               <Typography variant="h5" component="h2">
-                Name: {user.firstName + user.lastName}
+                Name: {user.firstName}
+              
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
                 {user.email}
