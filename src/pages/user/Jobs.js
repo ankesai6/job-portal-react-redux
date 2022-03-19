@@ -128,8 +128,7 @@ export default function Jobs() {
                   <>
                     <CardActions>
                       <Button  
-                      type="button" 
-                      class="btn btn-primary"
+                     color="primary"
                        size="small"
                         variant="contained"
                         onClick={() =>
@@ -141,9 +140,7 @@ export default function Jobs() {
                         View Applicants
                       </Button>
                       <Button
-                     type="button" 
-                      class="btn btn-primary"
-                        color="primary"
+                       color="primary"
                         size="small"
                         variant="contained"
                         onClick={() =>
