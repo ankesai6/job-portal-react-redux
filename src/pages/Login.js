@@ -119,6 +119,8 @@ export default function Login() {
               <Link href="/signup" variant="body2">
                 {"Don't have an account? Register"}
               </Link>
+               <h3>Demo Crediantials</h3>
+               <p> Email & PassWord :admin123@gmail.com</p>
             </Grid>
           </Grid>
         </form>
