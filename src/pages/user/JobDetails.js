@@ -169,8 +169,8 @@ export default function JobDetails() {
                 )}
               </Typography>
             ) : (
-              <h3>You did not applied for this job yet </h3>
-              <p>If You Are Intersted Please Apply </p>
+              <h3>You did not applied for this job yet! If You Are Intersted Please Apply</h3>
+              
             )}
           </CardContent>
         </Card>
