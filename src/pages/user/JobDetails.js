@@ -127,7 +127,10 @@ export default function JobDetails() {
                   userData[0].id,
                   userData[0].firstName,
                   userData[0].lastName,
-                  userData[0].email
+                  userData[0].email,
+                  userData[0].salary,
+                  userData[0].experince,
+                  
                 )
               }
             >
