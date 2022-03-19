@@ -106,19 +106,19 @@ export default function ViewApplicants() {
             </Typography>
             <br />
             <Typography variant="h6" component="h2">
-              Job Type/Role: {location.state.jobData.type}
+              Job Role: {location.state.jobData.type}
             </Typography>
             <br />
              <Typography variant="h6" component="h2">
-              Job Type/Role: {location.state.jobData.salary}
+              Job Salary: {location.state.jobData.salary}
             </Typography>
             <br />
             <Typography variant="h6" component="h2">
-              Job Type/Role: {location.state.jobData.experience}
+              Job Experience: {location.state.jobData.experience} 
             </Typography>
            <br />
            <Typography variant="h6">
-              Updated on: {location.state.jobData.date}
+              Posted on: {location.state.jobData.date}
             </Typography>
           </CardContent>
         </Card>
