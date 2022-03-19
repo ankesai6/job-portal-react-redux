@@ -125,7 +125,6 @@ export default function SignUp() {
                 Already have an account? Log in
 
               </Link>
-                        <br>
                   <h3>Demo Crediantials</h3>
                <p> Email & PassWord :admin123@gmail.com</p>
             </Grid>
