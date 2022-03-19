@@ -3,13 +3,12 @@ import reducer from "./reducer";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-// ===========================|| REDUX - MAIN STORE ||=========================== //
+//              || REDUX - MAIN STORE ||                          //
 
 const persistConfig = {
   key: "redux-storage",
   storage,
 };
-
 const persistedReducer = persistReducer(persistConfig, reducer);
 const store = createStore(
   persistedReducer,
