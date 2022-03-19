@@ -139,8 +139,8 @@ export default function AddJob() {
                   <TextField
                     variant="outlined"
                     required
-                    value={type}
-                    onChange={(e) => setType(e.target.value)}
+                    value={salary}
+                    onChange={(e) => setSalary(e.target.value)}
                     fullWidth
                     label="Salary"
                     name="salary"
@@ -150,8 +150,8 @@ export default function AddJob() {
                   <TextField
                     variant="outlined"
                     required
-                    value={type}
-                    onChange={(e) => setType(e.target.value)}
+                    value={experience}
+                    onChange={(e) => setExperience(e.target.value)}
                     fullWidth
                     label="Experience"
                     name="experience"
